@@ -1,0 +1,15 @@
+C:\Users\aisay\source\repos\aiLoginPage\bin\Debug\aiLoginPage.exe.config
+C:\Users\aisay\source\repos\aiLoginPage\bin\Debug\aiLoginPage.exe
+C:\Users\aisay\source\repos\aiLoginPage\bin\Debug\aiLoginPage.pdb
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\aiLoginPage.csproj.AssemblyReference.cache
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\MainWindow.g.cs
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\App.g.cs
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\aiLoginPage_MarkupCompile.cache
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\aiLoginPage_MarkupCompile.lref
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\MainWindow.baml
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\aiLoginPage.g.resources
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\aiLoginPage.Properties.Resources.resources
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\aiLoginPage.csproj.GenerateResource.cache
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\aiLoginPage.csproj.CoreCompileInputs.cache
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\aiLoginPage.exe
+C:\Users\aisay\source\repos\aiLoginPage\obj\Debug\aiLoginPage.pdb
