@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using LoginPageUnitTest;
 
 namespace aiLoginPage
 {
@@ -50,12 +51,20 @@ namespace aiLoginPage
             {
                 MessageBox.Show("Please fill in all the slots.");
             }
-            else if (match != null && match.Length == pwd.Length)
+            else
             {
-                MessageBox.Show("Thank you for providing the input.");
-            } else
-            {
-                MessageBox.Show("A valid password needs to have at least six characters with both letters and numbers.");
+                var userData = new UserData();
+                if (match != null && match.Length == pwd.Length)
+                {
+                    if (userData.LogIn(username, pwd) == true)
+                        MessageBox.Show("You are logged in as User # " + userData.UserID);
+                    else
+                        MessageBox.Show("You could not be verified. Please try again.");
+                }
+                else
+                {
+                    MessageBox.Show("A valid password needs to have at least six characters with both letters and numbers.");
+                }
             }
         }
 
