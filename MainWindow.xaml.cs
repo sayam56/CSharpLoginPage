@@ -63,7 +63,7 @@ namespace aiLoginPage
                 }
                 else
                 {
-                    MessageBox.Show("A valid password needs to have at least six characters with both letters and numbers.");
+                    MessageBox.Show("A valid password needs to have at least six characters starting with a letter containing both letters and numbers.");
                 }
             }
         }

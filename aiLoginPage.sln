@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aiLoginPage", "aiLoginPage.csproj", "{41FCA577-25B0-46FE-8C2F-B3E430F5FB30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginPageUnitTest", "..\LoginPageUnitTest\LoginPageUnitTest.csproj", "{C4C7E4A2-AC57-47C5-8CD2-2A46331E269D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aiLoginPageUnitTest", "..\LoginPageUnitTest\aiLoginPageUnitTest.csproj", "{C4C7E4A2-AC57-47C5-8CD2-2A46331E269D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

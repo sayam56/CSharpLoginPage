@@ -131,9 +131,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LoginPageUnitTest\LoginPageUnitTest.csproj">
+    <ProjectReference Include="..\LoginPageUnitTest\aiLoginPageUnitTest.csproj">
       <Project>{c4c7e4a2-ac57-47c5-8cd2-2a46331e269d}</Project>
-      <Name>LoginPageUnitTest</Name>
+      <Name>aiLoginPageUnitTest</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
