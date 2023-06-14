@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace aiLoginPage
+namespace aiBookStoreGUI
 {
     /// <summary>
     /// Interaction logic for App.xaml

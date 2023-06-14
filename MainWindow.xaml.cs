@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* ************************************************************
+ * For students to work on assignments and project.
+ * Permission required material. Contact: xyuan@uwindsor.ca 
+ * ************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,63 +14,33 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Text.RegularExpressions;
-using LoginPageUnitTest;
+using BookStoreLIB;
 
-namespace aiLoginPage
+namespace BookStoreGUI
 {
-    /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
-        }
-
-        private void cancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void okButton_Click(object sender, RoutedEventArgs e)
-        {
-            string username = this.nameTextBox.Text;
-            string pwd = this.pwdTextBox.Password;
-            Match match = null;
-
-            Regex r = new Regex("^[a-zA-Z][0-9a-zA-Z]{5,}");
-
-            MatchCollection regexCheck = r.Matches(pwd);
-            if (r.Matches(pwd).Count > 0)
+            var userData = new UserData();
+            var dlg = new LoginDialog();
+            dlg.Owner = this;
+            dlg.ShowDialog();
+            // Process data entered by user if dialog box is accepted
+            if (dlg.DialogResult == true)
             {
-                match = regexCheck[0];
-            }
-            
-
-            if (username == "" || pwd == "")
-            {
-                MessageBox.Show("Please fill in all the slots.");
-            }
-            else
-            {
-                var userData = new UserData();
-                if (match != null && match.Length == pwd.Length)
-                {
-                    if (userData.LogIn(username, pwd) == true)
-                        MessageBox.Show("You are logged in as User # " + userData.UserID);
-                    else
-                        MessageBox.Show("You could not be verified. Please try again.");
-                }
+                if (userData.LogIn(dlg.nameTextBox.Text, dlg.passwordTextBox.Password) == true)
+                    this.statusTextBlock.Text = "You are logged in as User #" + userData.UserID;
                 else
-                {
-                    MessageBox.Show("A valid password needs to have at least six characters starting with a letter containing both letters and numbers.");
-                }
+                    MessageBox.Show("You could not be verified. Please try again.");
             }
         }
-
+        private void exitButton_Click(object sender, RoutedEventArgs e) { this.Close(); }
+        public MainWindow() { InitializeComponent(); }
+        private void Window_Loaded(object sender, RoutedEventArgs e) { }
+        private void addButton_Click(object sender, RoutedEventArgs e) { }
+        private void chechoutButton_Click(object sender, RoutedEventArgs e) { }
     }
 }
