@@ -1,0 +1,62 @@
+﻿<Window x:Class="BookStoreGUI.PlaceAnOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookStoreGUI"
+        mc:Ignorable="d"
+        Title="PlaceAnOrder" Height="550" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Content="Shipping to:" Margin="0,0,0,20" Grid.RowSpan="2" />
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,30,20" Grid.RowSpan="2" Name="shippingToText" IsReadOnly="True" Background="LightGray"/>
+
+            <Label Grid.Row="1" Content="Items:" Margin="0,0,0,20" Grid.RowSpan="2" Name="placeonOrderItems"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="0,0,30,20" Grid.RowSpan="2" Name="placeonOrderText" IsReadOnly="True"/>
+
+            <Label Grid.Row="2" Content="Shipping and Handling:" Margin="0,0,0,20" Grid.RowSpan="2" />
+            <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,30,20" Grid.RowSpan="2" Name="shippingHandlingText" IsReadOnly="True" />
+
+            <Label Grid.Row="3" Content="Total before tax:" Margin="0,0,0,20" Grid.RowSpan="2" />
+            <TextBox Grid.Row="3" Grid.Column="1" Margin="0,0,30,20" Name="totalBeforeTax" Grid.RowSpan="2" IsReadOnly="True" />
+
+            <Label Grid.Row="4" Content="Estimated GST/HST:" Margin="0,0,0,20" Grid.RowSpan="2" />
+            <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,30,20" Name="estimatedGst" Grid.RowSpan="2" IsReadOnly="True" />
+
+            <Label Grid.Row="5" Content="Order Total:" Margin="0,0,0,20" Grid.RowSpan="2" FontWeight="Bold" />
+            <TextBox Grid.Row="5" Grid.Column="1" Margin="0,0,30,20" Name="orderTotal" Grid.RowSpan="2" IsReadOnly="True" />
+
+            <Label Grid.Row="10" Content="Shipping Address:" Margin="0,0,0,20" Grid.RowSpan="2" FontWeight="Bold" />
+            <TextBox Grid.Row="10" Grid.Column="1" Margin="0,0,30,20" Grid.RowSpan="2" IsReadOnly="True" />
+
+            <Label Grid.Row="12" Content="Payment Information" Margin="0,0,0,20" Grid.RowSpan="2" FontWeight="Bold" />
+            <TextBox Grid.Row="12" Margin="134,0,30,-34" Grid.RowSpan="22" Grid.ColumnSpan="2" IsReadOnly="True" />
+
+            <Button Grid.Row="14" Content="Place Order" Margin="134,86,30,-115" Grid.ColumnSpan="2" />
+        </Grid>
+    </Grid>
+</Window>

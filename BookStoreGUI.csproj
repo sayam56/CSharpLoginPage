@@ -90,6 +90,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PlaceAnOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindow.xaml.cs">
@@ -97,6 +101,9 @@
     </Compile>
     <Compile Include="OrderItemDialog.xaml.cs">
       <DependentUpon>OrderItemDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceAnOrder.xaml.cs">
+      <DependentUpon>PlaceAnOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -136,6 +143,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BookStoreDATA\BookStoreDATA.csproj">
+      <Project>{1C5FDAAB-4ED2-4054-8DFE-A0EA0A53C1EC}</Project>
+      <Name>BookStoreDATA</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LoginPageUnitTest\BookStoreLIB.csproj">
       <Project>{c4c7e4a2-ac57-47c5-8cd2-2a46331e269d}</Project>
       <Name>BookStoreLIB</Name>
