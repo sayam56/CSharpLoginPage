@@ -19,6 +19,7 @@ using System.Data;
 using BookStoreLIB;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
+using BookStoreDATA;
 
 namespace BookStoreGUI
 {
@@ -28,9 +29,10 @@ namespace BookStoreGUI
         DataSet dsBookCat;
         UserData userData;
         BookOrder bookOrder;
+
+        private void exitButton_Click(object sender, RoutedEventArgs e) { this.Close(); }
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            var userData = new UserData();
             var dlg = new LoginDialog();
             dlg.Owner = this;
             dlg.ShowDialog();
@@ -48,7 +50,7 @@ namespace BookStoreGUI
             }
 
 
-            if (username == "" || pwd == "")
+            if (dlg.DialogResult==true && (username == "" || pwd == ""))
             {
                 MessageBox.Show("Please fill in all the slots.");
             }
@@ -66,11 +68,12 @@ namespace BookStoreGUI
                 }
                 else
                 {
-                    MessageBox.Show("A valid password needs to have at least six characters starting with a letter containing both letters and numbers.");
+                    if (dlg.DialogResult == true)
+                        MessageBox.Show("A valid password needs to have at least six characters starting with a letter containing both letters and numbers.");
                 }
             }
         }
-        private void exitButton_Click(object sender, RoutedEventArgs e) { this.Close(); }
+        
         public MainWindow() { InitializeComponent(); }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -111,9 +114,32 @@ namespace BookStoreGUI
         private void chechoutButton_Click(object sender, RoutedEventArgs e)
         {
             int orderId;
-            orderId = bookOrder.PlaceOrder(userData.UserID);
-            MessageBox.Show("Your order has been placed. Your order id is " +
-            orderId.ToString());
+            if (CheckUserLoggedIn())
+            {
+                PlaceAnOrder placeAnOrderDialog = new PlaceAnOrder();
+                DALUserInfo userInfo = new DALUserInfo();
+                placeAnOrderDialog.PlaceAnOrderUIChanges(bookOrder.ItemNumbers(), bookOrder.GetOrderTotal(), userInfo.GetFullName(userData.UserID));
+                placeAnOrderDialog.ShowDialog();
+                orderId = bookOrder.PlaceOrder(userData.UserID);
+                MessageBox.Show("Your order has been placed. Your order id is " +
+                orderId.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Please log in before proceeding to checkout.");
+            }
+        }
+
+        public bool CheckUserLoggedIn()
+        {
+            if (userData.UserID > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
